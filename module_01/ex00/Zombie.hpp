@@ -2,21 +2,15 @@
 #define ZOMBIE_HPP
 
 #include <string>
+#include <iostream>
 
 class Zombie {
 private:
-    std::string _name;
+	std::string name;
 
 public:
-    Zombie();                             // default (lets us construct empty zombies if needed)
-    explicit Zombie(const std::string& name);
-    ~Zombie();                            // must print a message with the name
-
-    void announce() const;                // "<name>: BraiiiiiiinnnzzzZ..."
-    void setName(const std::string& name);
+	Zombie(std::string zombieName);
+	~Zombie(void);
+	void announce(void) const;
 };
-
-Zombie* newZombie(const std::string& name);   // heap
-void     randomChump(const std::string& name);// stack + announce
-
 #endif
