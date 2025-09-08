@@ -1,8 +1,5 @@
 #include "Zombie.hpp"
 
-Zombie *newZombie(std::string name);
-void randomChump(std::string name);
-
 int main() {
     // 1) Stack-based zombie (auto-destroy)
     randomChump("Stacky");

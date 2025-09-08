@@ -1,6 +1,8 @@
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
+#define NUM 5
+
 #include <iostream>
 #include <string>
 
@@ -11,11 +13,13 @@ private:
 
 public:
 	Zombie();
-	Zombie(std::string newName);
+	Zombie(const std::string& newName);
 	~Zombie(void);
-	void setName(std::string newName);
+	void setName(const std::string& newName);
 	void announce();
 };
+
+Zombie* zombieHorde(int N, const std::string& name);
 
 
 #endif

@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string zombieName) : name(zombieName){};
+Zombie::Zombie(const std::string& zombieName) : name(zombieName){};
 
 Zombie::~Zombie(void){
 	std::cout << "Zombie " << name << " is being destroyed... :(" << std::endl;

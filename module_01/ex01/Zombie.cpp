@@ -2,13 +2,13 @@
 
 Zombie::Zombie(void){};
 
-Zombie::Zombie(std::string zombieName) : name(zombieName){};
+Zombie::Zombie(const std::string& zombieName) : name(zombieName){};
 
 Zombie::~Zombie(void){
 	std::cout << "Zombie " << name << " is being destroyed... :(" << std::endl;
 };
 
-void Zombie::setName(std::string newName)
+void Zombie::setName(const std::string& newName)
 {
 	name = newName;
 }
