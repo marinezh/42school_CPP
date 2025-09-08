@@ -2,14 +2,14 @@ NAME := zombies
 CC := c++
 FLAGS := -Wall -Wextra -Werror -std=c++98
 
-SRC := main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-HEADERS := Zombie.hpp
+SRC := Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
+HEADERS := Weapon.hpp HumanA.hpp HumanB.hpp 
 OBJ := $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ)  
 
 %.o: %.cpp $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
