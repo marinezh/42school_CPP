@@ -1,6 +1,6 @@
 NAME := replace
 CC := c++
-FLAGS := -Wall -Wextra -Werror -std=c++98
+FLAGS := -Wall -Wextra -Werror -std=c++11
 
 SRC := main.cpp
 
