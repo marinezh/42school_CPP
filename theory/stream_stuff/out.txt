@@ -1,0 +1,3 @@
+Hello, world!
+42 - this is number
+42- it's time to learn cpp 

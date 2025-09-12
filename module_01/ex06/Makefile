@@ -1,9 +1,9 @@
-NAME := replace
+NAME := harl
 CC := c++
 FLAGS := -Wall -Wextra -Werror -std=c++11
 
-SRC := main.cpp
-
+SRC := Harl.cpp main.cpp
+HEADERS := Harl.hpp
 OBJ := $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -11,9 +11,9 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJ)  
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
-	
+
 clean:
 	rm -f $(OBJ)
 
