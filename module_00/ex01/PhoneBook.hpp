@@ -9,11 +9,12 @@ class PhoneBook{
 		int count;
 		int nextIndex;
 	
-	PhoneBook();
-	~PhoneBook();
+	public:
+		PhoneBook();
+		~PhoneBook();
 
-	void addContact();
-	void searchContact();
+		void addContact();
+		void searchContact() const;
 };
 
 #endif

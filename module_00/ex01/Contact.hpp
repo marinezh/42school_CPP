@@ -10,8 +10,10 @@ private:
 	std::string firstName;
 	std::string lastName;
 	std::string nickname;
-	std::string phoneBook;
+	std::string phoneNumber;
 	std::string darkestSecret;
+
+	static std::string formatShort(const std::string& str);
 
 public:
 	Contact(void);
