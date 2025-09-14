@@ -11,22 +11,42 @@ void PhoneBook::addContact(){
 
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, input);
+	while (input.empty()) {
+		if (std::cin.eof()) {
+			std::cout << "\nInput interrupted." << std::endl;
+			return; // or exit(1);
+		}
+		std::cout << "First name cannot be empty. Try again: ";
+		std::getline(std::cin, input);
+	}
 	c.setFirstName(input);
 
 	std::cout << "Enter last name: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input)) {
+		std::cout << "\nProgram interrupted." << std::endl;
+		exit(0);
+	}
 	c.setLastName(input);
 
 	std::cout << "Enter nickname: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input)) {
+		std::cout << "\nProgram interrupted." << std::endl;
+		exit(0);
+	}
 	c.setNickname(input);
 
 	std::cout << "Enter phone number: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input)) {
+		std::cout << "\nProgram interrupted." << std::endl;
+		exit(0);
+	}
 	c.setPhoneNumber(input);
 
 	std::cout << "Enter darkest secret: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input)) {
+		std::cout << "\nProgram interrupted." << std::endl;
+		exit(0);
+	}
 	c.setDarkestSecret(input);
 
 	contacts[nextIndex] = c;
@@ -43,16 +63,16 @@ void PhoneBook::searchContact() const {
 		return;
 	}
 
-	std::cout << std::setw(10) << "Index" << "|"
-			  << std::setw(10) << "First Name" << "|"
-			  << std::setw(10) << "Last Name" << "|"
-			  << std::setw(10) << "Nickname" << std::endl;
+	std::cout << std::setw(20) << std::right << "Index" << "|"
+			  << std::setw(20) << std::right <<"First Name" << "|"
+			  << std::setw(20) << std::right <<"Last Name" << "|"
+			  << std::setw(20) << std::right <<"Nickname" << std::endl;
 
 	for (int i = 0; i < count; i++) {
-		std::cout << std::setw(10) << i << "|"
-				  << std::setw(10) << contacts[i].getShortFirstName() << "|"
-				  << std::setw(10) << contacts[i].getShortLastName() << "|"
-				  << std::setw(10) << contacts[i].getShortNickname() << std::endl;
+		std::cout << std::setw(20) << std::right << i << "|"
+				  << std::setw(20) << std::right << contacts[i].getShortFirstName() << "|"
+				  << std::setw(20) << std::right << contacts[i].getShortLastName() << "|"
+				  << std::setw(20) << std::right << contacts[i].getShortNickname() << std::endl;
 	}
 
 	std::cout << "Enter index to display: ";
@@ -63,7 +83,7 @@ void PhoneBook::searchContact() const {
 		std::cout << "Invalid input!" << std::endl;
 		return;
 	}
-	std::cin.ignore(); // consume leftover newline
+	std::cin.ignore();
 
 	if (index < 0 || index >= count) {
 		std::cout << "Invalid index!" << std::endl;
