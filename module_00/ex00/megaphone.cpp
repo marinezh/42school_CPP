@@ -11,7 +11,7 @@ int main( int ac, char **av){
 	for (int i = 1; i < ac; i++)
 	{
 		for (int j = 0; av[i][j] != '\0'; ++j){
-			unsigned char c = static_cast<char>(av[i][j]);
+			unsigned char c = av[i][j];
 			std::cout << static_cast<char>(std::toupper(c));
 		}
 	}
