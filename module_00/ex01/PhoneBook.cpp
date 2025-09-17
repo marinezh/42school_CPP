@@ -31,22 +31,22 @@ void PhoneBook::addContact(){
 	std::string last = notEmptyCheck("Enter last name: ");
 	if (last.empty())
 		return;  // abort adding, back to main loop
-	c.setFirstName(last);
+	c.setLastName(last);
 
 	std::string nick = notEmptyCheck("Enter nickname: ");
 	if (nick.empty())
 		return;  // abort adding, back to main loop
-	c.setFirstName(nick);
+	c.setNickname(nick);
 
 	std::string phone = notEmptyCheck("Enter phone number: ");
 	if (phone.empty())
 		return;  // abort adding, back to main loop
-	c.setFirstName(phone);
+	c.setPhoneNumber(phone);
 
 	std::string secret = notEmptyCheck("Enter darkest secret: ");
 	if (secret.empty())
 		return;  // abort adding, back to main loop
-	c.setFirstName(secret);
+	c.setDarkestSecret(secret);
 
 	contacts[nextIndex] = c;
 	if (count < 8)
