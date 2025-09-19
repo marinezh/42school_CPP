@@ -50,3 +50,56 @@ int main() {
 	std::cout << std::endl;
 	return 0;
 }
+#include <iostream>
+
+class Account {
+public:
+    Account(int initial_deposit) {
+        std::cout << "Account created with amount: " 
+                  << initial_deposit << std::endl;
+    }
+};
+
+int main() {
+    int const amounts[] = { 42, 54, 957, 432 };
+    size_t size = sizeof(amounts) / sizeof(int);
+
+    // Вместо вектора — создаём аккаунты вручную в цикле
+    for (size_t i = 0; i < size; i++) {
+        Account acc(amounts[i]); // вызываем конструктор Account(int)
+    }
+
+    return 0;
+}
+
+class Account {
+public:
+    Account(int initial_deposit) : _amount(initial_deposit) {
+        std::cout << "Constructor: amount = " << _amount << std::endl;
+    }
+    ~Account() {
+        std::cout << "Destructor: amount = " << _amount << std::endl;
+    }
+private:
+    int _amount;
+};
+
+int main() {
+    int const amounts[] = { 42, 54, 957 };
+    size_t size = sizeof(amounts) / sizeof(int);
+
+    std::cout << "\n=== ВАРИАНТ 1: цикл без вектора ===\n";
+    for (size_t i = 0; i < size; i++) {
+        Account acc(amounts[i]);
+        std::cout << "  Используем acc внутри цикла\n";
+    }
+    std::cout << "После цикла никаких объектов Account не осталось!\n";
+
+    std::cout << "\n=== ВАРИАНТ 2: вектор с диапазоном ===\n";
+    std::vector<Account> accounts(amounts, amounts + size);
+    std::cout << "Вектор хранит " << accounts.size() << " объектов Account\n";
+    std::cout << "Они будут жить до конца main\n";
+
+    std::cout << "\n=== Конец main ===\n";
+    return 0;
+}
