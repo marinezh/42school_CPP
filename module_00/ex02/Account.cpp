@@ -41,10 +41,15 @@ Account::~Account() {
 }
 
 // Static function
-int Account::getNbAccounts() { return _nbAccounts; }
+int Account::getNbAccounts() { 
+	std::cout <<"XXXXXXXX"<< _nbAccounts << std::endl;
+	return _nbAccounts; }
 int Account::getTotalAmount() { return _totalAmount; }
 int Account::getNbDeposits() { return _totalNbDeposits; }
 int Account::getNbWithdrawals() { return _totalNbWithdrawals; }
+int Account::checkAmount() const {
+	return _amount;
+}
 
 void Account::displayAccountsInfos() {
 	_displayTimestamp();
@@ -88,9 +93,6 @@ bool Account::makeWithdrawal(int withdrawal) {
 	return true;
 }
 
-int Account::checkAmount() const {
-	return _amount;
-}
 
 void Account::displayStatus() const {
 	_displayTimestamp();

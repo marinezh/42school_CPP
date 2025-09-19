@@ -12,7 +12,7 @@ int main( void ) {
 
 	std::cout << ">>> Create the array of initial balances\n";
 	int	const amounts[] = { 42, 54, 957, 432, 1234, 0, 754, 16576 };
-	size_t const amounts_size( sizeof(amounts) / sizeof(int) );
+	int amounts_size( sizeof(amounts) / sizeof(int) );
 
 	std::cout << ">>> Create vector accounts based on arr amounts\n";
 	accounts_t accounts( amounts, amounts + amounts_size );
