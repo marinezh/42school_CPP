@@ -9,3 +9,8 @@ Zombie::~Zombie(void){
 void Zombie::announce(void) const{
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
+
+void Zombie::test(void) const  {
+	std::string str = "test this ";
+	std::cout << str + name <<  std::endl;
+}
