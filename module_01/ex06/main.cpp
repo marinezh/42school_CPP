@@ -18,7 +18,7 @@ LogLevel getLogLevel(const std::string &level) {
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		std::cout << "Guess what? They put two pickles on my burger instead of three" << std::endl;
 		return 1;
 	}
 
@@ -29,21 +29,18 @@ int main(int argc, char **argv) {
 		case DEBUG:
 			std::cout << "[ DEBUG ]" << std::endl;
 			harl.complain("DEBUG");
-			// fallthrough
 		case INFO:
 			std::cout << "[ INFO ]" << std::endl;
 			harl.complain("INFO");
-			// fallthrough
 		case WARNING:
 			std::cout << "[ WARNING ]" << std::endl;
 			harl.complain("WARNING");
-			// fallthrough
 		case ERROR:
 			std::cout << "[ ERROR ]" << std::endl;
 			harl.complain("ERROR");
-			break;
+			
 		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			std::cout << "Guess what? They put two pickles on my burger instead of three" << std::endl;
 			break;
 	}
 	return 0;

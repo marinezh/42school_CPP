@@ -7,7 +7,7 @@ int main() {
 	// 2) Heap-based zombie (must delete)
 	Zombie* z = newZombie("Heapy");
 	z->announce();
-	z->test();
+
 	delete z;
 
 	return 0;

@@ -9,13 +9,3 @@ int main(void)
 	return 0;
 }
 
-// int main(){
-	// 	Zombie one("one");
-	// 	Zombie two("two");
-	// 	Zombie three("three");
-	
-	// 	one.announce();
-	// 	two.setName("blabla");
-	// 	return 0;
-	
-	// }

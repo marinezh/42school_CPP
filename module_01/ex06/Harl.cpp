@@ -46,22 +46,19 @@ void Harl::complain(std::string level) {
 	std::cout << "Unknown level: " << level << std::endl;
 }
 
-//So funcs[0] points to Harl::debug, funcs[1] → Harl::info, etc.
-// This is a lookup table:
-
-// levels[i] matches the string the user might pass ("DEBUG", "INFO", …).
-
-// funcs[i] is the function to call if levels[i] matches.
-
-// So they are aligned:
-
-// levels[0] == "DEBUG" → call funcs[0] == &Harl::debug
-
-// levels[1] == "INFO" → call funcs[1] == &Harl::info
-
-// etc.
-// Iterate over all 4 possible levels.
-
-// If the string level matches one of them (DEBUG, INFO, …):
-
-// Use (this->*funcs[i])(); to call the corresponding method.
+// We keep two parallel arrays (to avoid if/else):
+//
+// 1. levels[i] → the string the user can pass ("DEBUG", "INFO", "WARNING", "ERROR").
+// 2. funcs[i]  → the pointer to the corresponding Harl member function.
+//
+// Example of alignment:
+//   levels[0] == "DEBUG"   → funcs[0] == &Harl::debug
+//   levels[1] == "INFO"    → funcs[1] == &Harl::info
+//   levels[2] == "WARNING" → funcs[2] == &Harl::warning
+//   levels[3] == "ERROR"   → funcs[3] == &Harl::error
+//
+// Algorithm:
+//   - Loop through all 4 possible levels.
+//   - If the given string matches levels[i],
+//       call the corresponding function with: (this->*funcs[i])();
+//   - This dispatches the right complaint without a long if/else chain.
