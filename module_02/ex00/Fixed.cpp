@@ -4,13 +4,12 @@ Fixed::Fixed() : _value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-// Copy constructor
-Fixed::Fixed(const Fixed& other) {
+Fixed::Fixed(const Fixed &other) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other; // reuse assignment operator
 }
 
-// Copy assignment operator
+//Copy assignment operator
 Fixed& Fixed::operator=(const Fixed& other) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -34,3 +33,9 @@ void Fixed::setRawBits(int const raw) {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
+
+// Copy constructor
+// Fixed::Fixed(const Fixed &other) : _value(other._value) {
+// 	std::cout << "Copy constructor called" << std::endl;
+// 	//_value = other._value;
+// } 
