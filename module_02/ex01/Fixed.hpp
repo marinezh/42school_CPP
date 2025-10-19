@@ -10,9 +10,9 @@ class Fixed {
 		static const int	_fractionalBits = 8;
 
 	public:
-		Fixed();							// Default constructor
-		Fixed(const Fixed &other);			 // Copy constructor
-		Fixed& operator=(const Fixed& other); // Copy assignment operator
+		Fixed();								// Default constructor
+		Fixed(const Fixed &original);			 // Copy constructor
+		Fixed& operator=(const Fixed& original); // Copy assignment operator
 		~Fixed(); 								// Copy constructor// Destructor
 
 		// new constuctors
