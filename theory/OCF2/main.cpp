@@ -82,18 +82,18 @@ class Book {
 		}
 
 		// Friend function to overload << operator
-		// friend std::ostream& operator<<(std::ostream& os, const Book& book) {
-		// 	os << "Title: " << book.Title << std::endl;
-		// 	os << "Author: " << book.Author << std::endl;
-		// 	os << "Rates: ";
-		// 	for (int i = 0; i < book.RatesCounter; i++) {
-		// 		os << book.Rates[i];
-		// 		if (i < book.RatesCounter - 1) os << ", ";
-		// 	}
-		// 	os << std::endl;
-		// 	os << "Number of rates: " << book.RatesCounter;
-		// 	return os;
-		// }
+		friend std::ostream& operator<<(std::ostream& os, const Book& book) {
+			os << "Title: " << book.Title << std::endl;
+			os << "Author: " << book.Author << std::endl;
+			os << "Rates: ";
+			for (int i = 0; i < book.RatesCounter; i++) {
+				os << book.Rates[i];
+				if (i < book.RatesCounter - 1) os << ", ";
+			}
+			os << std::endl;
+			os << "Number of rates: " << book.RatesCounter;
+			return os;
+		}
 };
 
 int main()
@@ -140,3 +140,23 @@ int main()
 	
 	std::cout << "All objects will be safely destroyed without double deletion!" << std::endl;
 }
+// int main()
+// {
+// 	Book book1("Millionare Fastlane", "M.J. DeMarco");
+// 	Book book2("C++ Lambda Story", "Bartek F"); 
+
+// 	// Using the print() method
+// 	std::cout << "=== Using print() method ===" << std::endl;
+// 	std::cout << "Book 1:" << std::endl;
+// 	book1.print();
+// 	std::cout << std::endl;
+
+// 	std::cout << "Book 2:" << std::endl;
+// 	book2.print();
+// 	std::cout << std::endl;
+
+// 	// Using the overloaded << operator
+// 	std::cout << "=== Using << operator ===" << std::endl;
+// 	std::cout << "Book 1:" << std::endl << book1 << std::endl << std::endl;
+// 	std::cout << "Book 2:" << std::endl << book2 << std::endl;
+// }
