@@ -18,6 +18,8 @@ int main(void) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	// std::cout.precision(20);
+	// std::cout << std::fixed << (1.2 + 3.4) << std::endl;
 
 	return 0;
 }

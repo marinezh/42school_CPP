@@ -23,6 +23,7 @@ Fixed& Fixed::operator=(const Fixed& original) {
 Fixed::Fixed(const int n) {
 	std::cout << "Int constructor called" << std::endl;
 	_value = n << _fractionalBits; // multiply by 256
+	
 }
 
 // Float constructor
@@ -31,7 +32,6 @@ Fixed::Fixed(const float f) {
 	_value = roundf(f * (1 << _fractionalBits));
 }
 
-
 // Destructor
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
@@ -39,9 +39,12 @@ Fixed::~Fixed() {
 
 // Get/set
 int Fixed::getRawBits(void) const {
+	std::cout << "getRawBITS called" << std::endl;
 	return _value;
 }
+
 void Fixed::setRawBits(int const raw) {
+	std::cout << "setRawBITS called" << std::endl;
 	_value = raw;
 }
 

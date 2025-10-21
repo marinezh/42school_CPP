@@ -21,7 +21,7 @@ class Fixed {
 
 		//conversion functions
 		float toFloat(void) const;
-    	int   toInt(void) const;
+		int   toInt(void) const;
 
 		//getters/setters
 		int  getRawBits(void) const;
