@@ -4,6 +4,8 @@ Point::Point() : _x(0), _y(0){
 	// std::cout << "Default constructor called" << std::endl;
 }
 
+Point::Point(const float x, const float y) : _x(x), _y(y) {}
+
 // Copy constructor
 Point::Point(const Point& original) : _x(original._x), _y(original._y){
 	// std::cout << "Copy constructor called" << std::endl;

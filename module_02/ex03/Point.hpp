@@ -17,7 +17,8 @@ class Point {
 		
 		const Fixed& getX() const;
 		const Fixed& getY() const;
-
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const p);
 
 #endif
