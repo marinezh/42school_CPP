@@ -139,6 +139,11 @@ int main()
 	std::cout << std::endl;
 	
 	std::cout << "All objects will be safely destroyed without double deletion!" << std::endl;
+
+	// Using the overloaded << operator
+	std::cout << "=== Using << operator ===" << std::endl;
+	std::cout << "Book 1:" << std::endl << book1 << std::endl << std::endl;
+	std::cout << "Book 2:" << std::endl << book2 << std::endl;
 }
 // int main()
 // {
