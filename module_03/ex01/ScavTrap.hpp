@@ -1,10 +1,10 @@
-#ifndef CLAP_TRAP_H
-#define CLAP_TRAP_H
+#ifndef SCAV_TRAP_H
+#define SCAV_TRAP_H
 
 #include <iostream>
 #include <string>
 
-class ClapTrap {
+class ScavTrap : public ClapTrap {
 	private:
 		std::string _name;
 		int 		_hitPoints;
@@ -12,11 +12,11 @@ class ClapTrap {
 		int			_attackDamage;
 
 	public:
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap& other);
-		ClapTrap& operator=(const ClapTrap& other);
-		~ClapTrap();
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& other);
+		ScavTrap& operator=(const ScavTrap& other);
+		~ScavTrap();
 
 		// Actions
 		void attack(const std::string& target);
