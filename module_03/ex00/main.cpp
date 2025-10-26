@@ -1,13 +1,11 @@
 #include "ClapTrap.hpp"
 
 int main() {
-	ClapTrap a("BeBot");
+	ClapTrap a("BeeBot");
 	ClapTrap b("EnemyBot");
 
 	a.attack("EnemyBot");
-	a.getData();
-	b.getData();
-	std::cout <<"////////////////"<< std::endl;
+	a.attack("EnemyBot");
 	b.takeDamage(5);
 	b.beRepaired(3);
 	b.attack("BeeBot");
