@@ -1,4 +1,4 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
 	ScavTrap st("Serena");
@@ -12,7 +12,6 @@ int main() {
 	std::cout << "--- End of program ---" << std::endl;
 	return 0;
 
-	return 0;
 }
 
 

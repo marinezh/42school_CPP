@@ -1,8 +1,7 @@
-#ifndef SCAV_TRAP_H
-#define SCAV_TRAP_H
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
 	private:
@@ -20,8 +19,6 @@ class ScavTrap : public ClapTrap {
 
 		// Actions
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void getData(void) const;
+		void guardGate();
 };
 #endif
