@@ -4,7 +4,7 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++11
 
 SRC := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ := $(SRC:.cpp=.o)
-HEADERS := ClapTrap.hpp ScavTrap.cpp FragTrap.hpp
+HEADERS := ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 GREEN := \033[0;32m
 YELLOW := \033[0;33m
