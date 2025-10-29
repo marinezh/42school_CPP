@@ -1,9 +1,9 @@
-NAME := DiamondTrap
+NAME := Animal
 CC := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++11
 
-SRC := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
-HEADERS := ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+SRC := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp AAnimal.cpp
+HEADERS := Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp AAnimal.hpp
 OBJ := $(SRC:.cpp=.o)
 
 GREEN := \033[0;32m
