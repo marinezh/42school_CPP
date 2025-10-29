@@ -2,23 +2,24 @@
 
 WrongCat::WrongCat() {
 	type = "WrongCat";
-	std::cout << "[WrongCat] default-constructed\n";
+	std::cout << "[WrongCat] default-constructed" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
-	std::cout << "[WrongCat] copy-constructed\n";
+	std::cout << "[WrongCat] copy-constructed" << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& other) {
-	std::cout << "[WrongCat] copy-assigned\n";
-	if (this != &other) WrongAnimal::operator=(other);
+	std::cout << "[WrongCat] copy-assigned" << std::endl;
+	if (this != &other) 
+		WrongAnimal::operator=(other);
 	return *this;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << "[WrongCat] destroyed\n";
+	std::cout << "[WrongCat] destroyed" << std::endl;
 }
 
 void WrongCat::makeSound() const {
-	std::cout << "[WrongCat] Meee-ow? (but you won't hear me via base ptr)\n";
+	std::cout << "[WrongCat] Meee-ow? (but you won't hear me via base ptr)" << std::endl;
 }

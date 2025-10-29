@@ -8,9 +8,9 @@ class Cat : public Animal {
 		Cat();
 		Cat(const Cat& other);
 		Cat& operator=(const Cat& other);
-		virtual ~Cat();
+		~Cat();
 
-		virtual void makeSound() const; // override
+		virtual void makeSound() const;
 };
 
 #endif

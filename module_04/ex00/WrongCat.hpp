@@ -1,5 +1,5 @@
-#ifndef WRONGWrongCat_HPP
-#define WRONGWrongCat_HPP
+#ifndef WrongCat_HPP
+#define WrongCat_HPP
 
 #include "WrongAnimal.hpp"
 
@@ -10,7 +10,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat& operator=(const WrongCat& other);
 		~WrongCat();
 
-		virtual void makeSound() const;  // attempts to override, but base isn't virtual
+		void makeSound() const;  // attempts to override, but base isn't virtual
 };
 
 #endif

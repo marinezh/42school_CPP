@@ -1,5 +1,5 @@
-#ifndef WRONGWrongAnimal_HPP
-#define WRONGWrongAnimal_HPP
+#ifndef WrongAnimal_HPP
+#define WrongAnimal_HPP
 
 #include <iostream>
 #include <string>
@@ -10,13 +10,12 @@ class WrongAnimal {
 
 	public:
 		WrongAnimal();
-		//WrongAnimal(const std::string& type);
 		WrongAnimal(const WrongAnimal& other);
 		WrongAnimal& operator=(const WrongAnimal& other);
-		~WrongAnimal(); // virtual dtor for safe polymorphic delete
+		virtual ~WrongAnimal();
 
 		std::string getType() const;
-		virtual void makeSound() const; // virtual so Dog/Cat override works
+		void makeSound() const;   // NOT virtual on purpose
 
 };
 
